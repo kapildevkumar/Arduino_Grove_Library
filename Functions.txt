@@ -1,0 +1,102 @@
+// Functions
+
+1. Button -
+   * Button Class has function :
+       a) onoff(int BUTTON_PIN, int LED_PIN); - 
+          Checks the button, if pressed led is put on. 
+          Else it is off.
+
+
+2. Buzzer -
+   * Buzzer Class has the functions :
+       a) playmelody(int BUZZER_PIN, int Length, char note[], int duration, int tempo); - 
+          Play the melody that is entered in the note[] of string length : Length, duration of each note.
+          And Tempo can be in the range of 300....    
+
+ * note      frequency       period  
+ * c          261 Hz          3830   
+ * d          294 Hz          3400   
+ * e          329 Hz          3038   
+ * f          349 Hz          2864   
+ * g          392 Hz          2550   
+ * a          440 Hz          2272   
+ * b          493 Hz          2028   
+ * C          523 Hz          1912   
+ 
+       b) playNote(int BUZZER_PIN, char note, int duration); - 
+          Plays the single note in the above frequency   
+
+
+3. Car - 
+   * Car Class has the functions(using simple DC Motor) :
+       a) run(int pin1,int pin2,int pin3,int pin4,int s); - 
+           Runs both the motors with equal voltage and the speed of the motor can be selected with s
+           s=1 => 25% Speed
+           s=2 => 50% Speed
+           s=3 => Full speed 
+ 
+       b) turn(int pin1,int pin2,int pin3,int pin4,int s); -
+           Runs both the motors with unequal voltage to turn the motor and direction of turn can be selected with s
+           s=1 => Left
+           s=2 => Right
+
+
+4. LED - 
+   * LED Class has the functions :
+       a) on(int LED_PIN);
+          Active high. LED is put on.
+
+       b) off(int LED_PIN);
+          Active low. LED is put off.
+       c) blink(int LED_PIN, int time1, int time2);
+
+          Active high and low. LED is put on in time1 and off in time2.
+       d) fade(int LED_PIN, int time);
+          From active low to high in time duartion of 'time' in 20 steps.
+
+       e) bright(int LED_PIN, float bright);
+          A constant brighten led with 'bright' in percentage.
+
+
+5. Light - 
+   * LED Class has function :
+       a) read(int LIGHT_PIN, int LED_PIN, int threshold);
+          It reads the light amount and if the value is beyond a 'threshold' value it puts on the led.
+
+6. Line_Follow -
+   * Line_Follow has function :
+       a) run(int int led, int LS, int RS, int LM1, int LM2, int RM1, int RM2) 
+          This function is a simple line follower, with 'led' as IR LED, 'LS' and 'RS' as Left and Right IR Sensor,
+          LM1 and LM2 the left motor pins(LM1 +ve), RM1 and RM2 the right motor pins(RM1 +ve)
+
+7. Rotary -
+   * Rotary Class has function :
+       a) angle(int ROTARY_PIN);
+          It reads angle of the rotary sensor knob and prints it in the serial monitor.
+
+
+8. Sound - 
+   * Sound Class has function :
+       a) check(int SOUND_PIN);
+          It reads the sound in the surrounding and prints its value in the serial monitor.
+
+
+9. Temp -
+   * TEMP Class has function :
+       a) read(int TEMP_PIN);
+          It reads the temperature and prints it in the serial monitor.
+
+
+10. Touch - 
+   * Touch Class has function :
+       a) onoff(int TOUCH_PIN, int LED_PIN);
+          It reads the touch sensor and puts on the LED if touched and off is not touched(the sensor).
+
+
+11. Ultra -
+   * Ultra Class has function :
+       a) start(int pin1)
+          It sends the ultrasound from pin1
+
+       b)  check(int pin2)
+          It checks for the recieved ultrasound in pin2. The threshold value of detction is set as 1000(Analog read).
